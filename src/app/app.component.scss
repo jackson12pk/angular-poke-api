@@ -1,40 +1,51 @@
-$normal: rgb(201, 185, 175);
-$fight: rgb(202, 40, 40);
-$flying: rgb(118, 118, 165);
-$poison: #80006b;
-$ground: rgb(247, 220, 132);
-$rock: rgb(184, 143, 11);
-$bug: rgb(136, 226, 136);
-$ghost: rgb(59, 15, 141);
-$steel: #868585;
-$fire: #ffa500;
-$water: #3b90d1;
-$grass: #228b22;
-$eletric: rgb(240, 220, 40);
-$psychic: #993e61;
-$ice: #6cffeb;
-$dragon: rgb(73, 9, 116);
-$dark: rgb(32, 30, 30);
-$fairy: #e26293;
+$normal: linear-gradient( 90deg, rgb(172, 168, 166) ,  rgb(201, 185, 175) );
+$fight: linear-gradient( 90deg, rgb(175, 22, 22) ,  rgb(202, 40, 40) );
+$flying: linear-gradient( 90deg, rgb(109, 109, 139) ,  rgb(118, 118, 165) );
+$poison: linear-gradient( 90deg, #741b65 ,  #80006b );
+$ground: linear-gradient( 90deg, rgb(211, 190, 123) ,  rgb(247, 220, 132) );
+$rock: linear-gradient( 90deg, rgb(165, 138, 50) ,  rgb(184, 143, 11) );
+$bug: linear-gradient( 90deg, rgb(97, 192, 97) ,  rgb(136, 226, 136) );
+$ghost: linear-gradient( 90deg, rgb(90, 46, 172) ,  rgb(59, 15, 141) );
+$steel: linear-gradient( 90deg, #a79f9f ,  #868585 );
+$fire: linear-gradient( 90deg, #ff9100 ,  #ffa500 );
+$water: linear-gradient( 90deg, #2b99ec ,  #3b90d1 );
+$grass: linear-gradient( 90deg, #09b809 ,  #228b22 );
+$eletric: linear-gradient( 90deg, rgb(233, 211, 17) ,  rgb(240, 220, 40) );
+$psychic: linear-gradient( 90deg, #c2517c ,  #993e61 );
+$ice: linear-gradient( 90deg, #24e7cd ,  #6cffeb );
+$dragon: linear-gradient( 90deg, rgb(69, 29, 95) ,  rgb(73, 9, 116) );
+$dark: linear-gradient( 90deg, rgb(32, 30, 30) ,  rgb(32, 30, 30) );
+$fairy: linear-gradient( 90deg, #d37f9f ,  #e26293 );
 
 .container{
+  padding: 30px 0;
   font-family: sans-serif;
-  max-width: 80%;
-  margin: 0 auto;
   .content-pokemons{
     .pokemons-list{
-      width: 100%;
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      .bg-type.normal{ background: $normal}
+      .bg-type.fighting{ background: $fight}
+      .bg-type.flying{ background: $flying}
+      .bg-type.poison{ background: $poison}
+      .bg-type.ground{ background: $ground}
+      .bg-type.rock{ background: $rock}
+      .bg-type.bug{ background: $bug}
+      .bg-type.ghost{ background: $ghost}
+      .bg-type.steel{ background: $steel}
+      .bg-type.fire{ background: $fire}
+      .bg-type.water{ background: $water}
+      .bg-type.grass{ background: $grass}
+      .bg-type.electric{ background: $eletric}
+      .bg-type.psychic{ background: $psychic}
+      .bg-type.ice{ background: $ice}
+      .bg-type.dragon{ background: $dragon}
+      .bg-type.dark{ background: $dark}
+      .bg-type.fairy{ background: $fairy}
       .card-pokemon{
         position: relative;
         border-radius: 15px;
         background: transparent;
         border: 1px solid #fff;
         padding: 20px;
-        width: 100%;
         .content-number{
           color: #fff;
           font-weight: 600;
@@ -61,32 +72,17 @@ $fairy: #e26293;
             font-family: sans-serif;
             text-transform: uppercase;
             border-radius: 50px;
+            border: 2px solid #fff;
             font-size: 0.65rem;
             padding: 5px 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            text-shadow: 0 0 1px #000;
+            text-shadow: 0 0 3px rgba(0,0,0,0.8);
+            box-shadow: 0 0 3px rgba(0,0,0,0.3);
           }
-          .badge-type.normal{ background: $normal}
-          .badge-type.fighting{ background: $fight}
-          .badge-type.flying{ background: $flying}
-          .badge-type.poison{ background: $poison}
-          .badge-type.ground{ background: $ground}
-          .badge-type.rock{ background: $rock}
-          .badge-type.bug{ background: $bug}
-          .badge-type.ghost{ background: $ghost}
-          .badge-type.steel{ background: $steel}
-          .badge-type.fire{ background: $fire}
-          .badge-type.water{ background: $water}
-          .badge-type.grass{ background: $grass}
-          .badge-type.electric{ background: $eletric}
-          .badge-type.psychic{ background: $psychic}
-          .badge-type.ice{ background: $ice}
-          .badge-type.dragon{ background: $dragon}
-          .badge-type.dark{ background: $dark}
-          .badge-type.fairy{ background: $fairy}
+
         }
         .name{
           color: rgb(255, 255, 255);
@@ -99,15 +95,17 @@ $fairy: #e26293;
         .status-list{
           margin: 15px 0;
           .status{
-            color: #fff;
+            color: #333;
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin: 10px 0;
+            background-color: #fff;
             padding: 5px 10px;
-            border: 1px solid #fff;
-            border-radius: 50px;
+            border: 2px solid #fff;
+            border-radius: 5px;
             font-size: 0.75rem;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
           }
           .status-val{
             font-weight: 800;

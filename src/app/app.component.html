@@ -1,16 +1,17 @@
 <div class="container">
 
   <div class="content-pokemons">
-    <div class="pokemons-list">
-      <div *ngFor="let pokemon of pokemons" >
-        <div class="card-pokemon" *ngIf="pokemon.status">
-          <div class="content-number">#{{pokemon.status.id}}</div>
-          <div class="img-pokemon" *ngIf="pokemon.status.sprites">
-            <img [src]="pokemon.status.sprites.other.home.front_default" alt="" >
-          </div>
-          <div class="types" >
-            <div class="badge-type {{tipo.type.name}}" *ngFor="let tipo of pokemon.status.types">
-              {{tipo.type.name}}
+    <div class="pokemons-list row">
+      <div class="col-3 mb-4" *ngFor="let pokemon of pokemons" >
+        <div class="card-pokemon bg-type {{pokemon.status.types[0].type.name}}" *ngIf="pokemon.status">
+            <div class="content-number">#{{pokemon.status.id}}</div>
+            <div class="img-pokemon" *ngIf="pokemon.status.sprites">
+                <!-- <img [src]="pokemon.status.sprites.other.home.front_default" alt="" > -->
+                <img [src]="pokemon.status.sprites.other['official-artwork'].front_default" alt="" >
+            </div>
+            <div class="types" >
+            <div class="badge-type bg-type {{types.type.name}}" *ngFor="let types of pokemon.status.types">
+                {{types.type.name}}
             </div>
           </div>
           <p class="name">
