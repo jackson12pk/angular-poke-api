@@ -1,35 +1,49 @@
 <div class="container">
 
-  <div class="content-pokemons">
-    <div class="pokemons-list row">
-      <div class="col-3 mb-4" *ngFor="let pokemon of pokemons" >
-        <div class="card-pokemon bg-type {{pokemon.status.types[0].type.name}}" *ngIf="pokemon.status">
-            <div class="content-number">#{{pokemon.status.id}}</div>
-            <div class="img-pokemon" *ngIf="pokemon.status.sprites">
-                <!-- <img [src]="pokemon.status.sprites.other.home.front_default" alt="" > -->
-                <img [src]="pokemon.status.sprites.other['official-artwork'].front_default" alt="" >
-            </div>
-            <div class="types" >
-            <div class="badge-type bg-type {{types.type.name}}" *ngFor="let types of pokemon.status.types">
-                {{types.type.name}}
-            </div>
-          </div>
-          <p class="name">
-            {{pokemon.name | uppercase}}
-          </p>
-          <div class="status-list">
-            <div class="status" *ngFor="let pokeStat of pokemon.status.stats">
-              <div class="status-name">
-                {{pokeStat.stat.name | uppercase}}
-              </div>
-              <div class="status-val">
-                {{pokeStat.base_stat}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+	<div class="content-pokemons">
+		<div class="pokemons-list row">
+			<div class="col-2 mb-4" *ngFor="let pokemon of pokemons" >
+				<div class="card-pokemon " *ngIf="pokemon.status">
+					<!-- <div class="content-number">#{{pokemon.status.id}}</div> -->
+					<div class="img-pokemon" *ngIf="pokemon.status.sprites">
+						<!-- <img [src]="pokemon.status.sprites.other.home.front_default" alt="" > -->
+						<img [src]="pokemon.status.sprites.other.home.front_default" alt="">
+					</div>
+					<div class="content-body-card bg-type {{pokemon.status.types[0].type.name}}">
+						<div class="types" >
+							<div class="badge-type text-type {{types.type.name}}" *ngFor="let types of pokemon.status.types">
+								{{types.type.name}}
+							</div>
+						</div>
+						<p class="name">
+							{{pokemon.name | uppercase}}
+						</p>
+						<div class="status-list">
+							<div class="status" *ngFor="let pokeStat of pokemon.status.stats">
+								<div class="status-name">
+									{{pokeStat.stat.name | uppercase}}
+								</div>
+								<div class="status-val">
+									{{pokeStat.base_stat}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="loading" class="loader"></div>
+	</div>
+	<div style="position: fixed; top: 45%; right:80px; width: 250px;" class="bg-white p-2 rounded shadow d-none">
+		<h5 class="text-center mt-3">Adicionar Mais</h5>
+		<!-- <button class="btn btn-info" (click)="previousPage()" [disabled]="currentPage === 0">Anterior</button>
+		<span class="mx-2 text-white">Página {{ currentPage + 1 }}</span>
+		<button class="btn btn-info" (click)="nextPage()">Próxima</button> -->
+		<!-- <div class="my-2 d-flex w-100 bg-white p-3 rounded" style="gap:10px;">
+			<button class="w-100 btn btn-info" (click)="addMore(5)">+ 5</button>
+			<button class="w-100 btn btn-info" (click)="addMore(10)">+ 10</button>
+			<button class="w-100 btn btn-info" (click)="addMore(20)">+ 20</button>
+		</div> -->
+	</div>
 </div>
+
